@@ -3,6 +3,7 @@ import React from "react"
 import Header from "../components/Header"
 import GlobalStyle from "../styles/GlobalStyle"
 import styled from "styled-components"
+import MainContext from "../MainContext"
 
 const MainStyled = styled.main`
   padding-top: 60px;
@@ -12,11 +13,16 @@ const MainStyled = styled.main`
 
 export default function Layout({ children }) {
   return (
-    <>
-      <GlobalStyle />
-      <Header />
-      <MainStyled>{children}</MainStyled>
-      <footer />
-    </>
+    <MainContext.Consumer>
+      { (props) => (
+        <>
+          <GlobalStyle />
+          <Header />
+          <MainStyled>{children}</MainStyled>
+          <footer />
+        </>
+      )
+      }
+    </MainContext.Consumer>
   )
 }

@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: ".env"
+})
+
 module.exports = {
   siteMetadata: {
     title: "BEJAMAS | GATSBY SHOP",
@@ -28,5 +32,14 @@ module.exports = {
         icon: "./src/assets/images/icon.png", // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: '9osv3hd8',
+        dataset: 'production',
+        watchMode: true,
+        token: process.env.SANITY_TOKEN
+      }
+    }
   ],
 }

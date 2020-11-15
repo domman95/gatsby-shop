@@ -53,20 +53,21 @@ const Article = styled.article`
   }
 `
 
-export default function Product() {
+export default function Product({ data, addToCart }) {
+  const { id, name, slug, excerpt, image, price } = data
 
   return (
     <Article>
-      <Link to="/">
+      <Link to={`/${slug.current}`}>
         <div className="image">
-          <img src={dumy} alt="" />
+          <img src={image.asset.fluid.src} alt={slug.current} />
         </div>
         <div className="info">
-          <h3 className="nameOfProduct">GREAT DUMMY</h3>
-          <p className="details">Something that you trully need, but haven’t know about it yet</p>
+          <h3 className="nameOfProduct">{name}</h3>
+          <p className="details">{excerpt}</p>
         </div>
       </Link>
-      <button className="addToCart" onClick={() => console.log("ok")}>+</button>
+      <button className="addToCart" onClick={() => addToCart(data)}>+</button>
     </Article>
   )
 }

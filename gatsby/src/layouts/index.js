@@ -14,14 +14,14 @@ const MainStyled = styled.main`
 export default function Layout({ children }) {
   return (
     <MainContext.Consumer>
-      { (props) => (
-        <>
-          <GlobalStyle />
-          <Header />
-          <MainStyled>{children}</MainStyled>
-          <footer />
-        </>
-      )
+      {
+        (props) => (
+          <>
+            <GlobalStyle />
+            <Header />
+            <MainStyled>{children}</MainStyled>
+            <footer />
+          </>)
       }
     </MainContext.Consumer>
   )

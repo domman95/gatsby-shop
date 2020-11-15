@@ -5,7 +5,7 @@ import Hero from "../components/Hero"
 import PopularProducts from "../components/PopularProducts"
 import { graphql } from "gatsby"
 
-export default function IndexPage({data}) {
+export default function IndexPage({ data }) {
   const dumies = data.dumies.nodes
   return (
     <>

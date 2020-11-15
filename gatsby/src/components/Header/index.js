@@ -59,14 +59,14 @@ export default function Header() {
   const [count, setCount] = useState(0)
 
   const toggleShoppingCart = () => {
-    if (count === 0) return;
+    if (count === 0) return
     setIsModal(!isModal)
   }
 
   const context = React.useContext(MainContext)
-  const { shopCart } = context;
+  const { shopCart } = context
 
-  useEffect(() => {    
+  useEffect(() => {
     setCount(shopCart.length)
   }, [shopCart])
 

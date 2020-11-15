@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 
 import styled from "styled-components"
 
 import Carousel from "react-elastic-carousel"
 import Product from "../Product"
-import MainContext from "../../MainContext"
 
 const ProductsSectionStyled = styled.section`
   margin: 100px 0;
@@ -44,7 +43,6 @@ const ProductsSectionStyled = styled.section`
 `
 
 export default function PopularProducts({ data }) {
-
   const breakPoints = [
     { width: 320, itemsToShow: 1 },
     { width: 580, itemsToShow: 2 },
@@ -52,29 +50,13 @@ export default function PopularProducts({ data }) {
     { width: 1140, itemsToShow: 4 },
   ]
 
-  const context = React.useContext(MainContext);
-  const { setShopCart, shopCart } = context;
-
-  useEffect(() => {
-    console.log(shopCart)
-  }, [shopCart])
-
-  const addToCart = (data) => {
-    setShopCart([
-      ...shopCart,
-      {...data}
-    ])
-  }
-
   return (
     <ProductsSectionStyled>
       <h2 className="title">Explore community choices</h2>
       <p className="paragraph">Updated daily based on most popular choices among dev community</p>
       <Carousel breakPoints={breakPoints}>
-        {data.map(item => <Product key={item.id} data={item} addToCart={addToCart} />)}
+        {data.map(item => <Product key={item.id} data={item} />)}
       </Carousel>
     </ProductsSectionStyled>
   )
 }
-
-

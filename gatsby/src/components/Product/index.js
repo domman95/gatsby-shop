@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import styled from "styled-components"
 
-import dumy from "../../assets/products/dumy.svg"
+import MainContext from "../../MainContext"
 
 const Article = styled.article`
   position: relative;
@@ -50,11 +50,15 @@ const Article = styled.article`
     font-weight: var(--bold);
     font-size: 32px;
     z-index: 1;
+    cursor: pointer;
   }
 `
 
-export default function Product({ data, addToCart }) {
-  const { id, name, slug, excerpt, image, price } = data
+export default function Product({ data }) {
+  const { name, slug, excerpt, image } = data
+
+  const context = React.useContext(MainContext)
+  const { addToCart } = context
 
   return (
     <Article>

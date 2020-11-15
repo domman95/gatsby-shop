@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react"
 
 import styled from "styled-components"
-import dumy from "../../assets/products/dumy.svg"
 import MainContext from "../../MainContext"
 
 const Container = styled.div`
@@ -92,7 +91,7 @@ const ShoppingCart = styled.div`
 `
 
 export default function ShoppingCartModal({ open, setIsModal }) {
-  const [productList, setShopCart] = useState([]);
+  const [productList, setShopCart] = useState([])
 
   const modalRef = useRef()
 
@@ -102,8 +101,8 @@ export default function ShoppingCartModal({ open, setIsModal }) {
     }
   }
 
-  const context = React.useContext(MainContext);
-  const { shopCart } = context;
+  const context = React.useContext(MainContext)
+  const { shopCart } = context
 
   useEffect(() => {
     setShopCart(shopCart)
@@ -114,16 +113,16 @@ export default function ShoppingCartModal({ open, setIsModal }) {
       {open &&
         <Container ref={modalRef} onClick={closeModal}>
           <ShoppingCart>
-          <ul>
-            {productList.map(({id, image, name, price}) => (
-              <li key={id}>
-                <div className="productImage">
+            <ul>
+              {productList.map(({ id, image, name, price }) => (
+                <li key={id}>
+                  <div className="productImage">
                     <img src={image.asset.fluid.src} alt="" />
-                </div>
-                <h3 className="productName">{name}</h3>
-                <p className="price">${price / 100}</p>
-              </li>
-            ))}
+                  </div>
+                  <h3 className="productName">{name}</h3>
+                  <p className="price">${price / 100}</p>
+                </li>
+              ))}
             </ul>
             <button className="submit" onClick={() => setIsModal(!open)}>Submit</button>
           </ShoppingCart>

@@ -9,22 +9,34 @@ const ProductsSectionStyled = styled.section`
   margin: 100px 0;
 
   .title {
-    color: white;
+    color: var(--white);
     font-weight: var(--bold);
     line-height: 34px;
     margin: 20px 0;
     font-size: 18px;
+    opacity: 0;
+    transform: translateY(40%);
+    animation: move .3s linear 2s forwards;
   }
 
   .paragraph {
-    color: #C4C4C4;
+    color: var(--lightgrey);
     line-height: 20px;
     margin-bottom: 64px;
     font-size: 16px;
+    opacity: 0;
+    transform: translateY(40%);
+    animation: move .3s linear 2.3s forwards;
   }
 
   .title, .paragraph {
     text-align: center;
+  }
+
+  .container {
+    opacity: 0;
+    transform: translateY(40%);
+    animation: move .6s linear 2.6s forwards;
   }
 
   @media (min-width: 768px) {
@@ -37,6 +49,13 @@ const ProductsSectionStyled = styled.section`
     .title, .paragraph {
       text-align: left;
       padding-left: 93px;
+    }
+  }
+
+  @keyframes move {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -54,9 +73,11 @@ export default function PopularProducts({ data }) {
     <ProductsSectionStyled>
       <h2 className="title">Explore community choices</h2>
       <p className="paragraph">Updated daily based on most popular choices among dev community</p>
-      <Carousel breakPoints={breakPoints}>
-        {data.map(item => <Product key={item.id} data={item} />)}
-      </Carousel>
+      <div className="container">
+        <Carousel breakPoints={breakPoints}>
+          {data.map(item => <Product key={item.id} data={item} />)}
+        </Carousel>
+      </div>
     </ProductsSectionStyled>
   )
 }

@@ -23,7 +23,7 @@ const HeaderStyled = styled.header`
   }
 
   a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-weight: var(--bold);
     font-size: 22px;
@@ -42,16 +42,15 @@ const ShoppingCartButton = styled.button`
     position: absolute;
     bottom: -5px;
     right: -5px;
-    display: flex;
+    display: ${({ count }) => count > 0 ? "flex" : "none"};
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--white);
     width: 18px;
     height: 18px;
     border-radius: 50%;
     background: #301346;
   }
-
 `
 
 export default function Header() {
@@ -73,7 +72,7 @@ export default function Header() {
   return (
     <HeaderStyled>
       <Link to="/">JAM SHOP</Link>
-      <ShoppingCartButton onClick={toggleShoppingCart}>
+      <ShoppingCartButton onClick={toggleShoppingCart} count={count}>
         <div className="count">{count}</div>
       </ShoppingCartButton>
       <ShoppingCartModal open={isModal} setIsModal={setIsModal} />

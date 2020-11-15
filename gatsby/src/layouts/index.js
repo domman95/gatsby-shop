@@ -9,6 +9,7 @@ const MainStyled = styled.main`
   padding-top: 60px;
   max-width: 1440px;
   margin: 0 auto;
+  overflow: hidden;
 `
 
 export default function Layout({ children }) {

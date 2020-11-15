@@ -1,10 +1,10 @@
 import React from "react"
 
 import styled from "styled-components"
-
 import HeroBackground from "../../assets/elements/hero_background.svg"
 import HeroImage from "../../assets/elements/monitor.svg"
 import HeroDecor from "../../assets/elements/hero_decor.svg"
+import Button from "../Button"
 
 const SectionStyled = styled.section`
   display: grid;
@@ -31,6 +31,9 @@ const HeroImageStyled = styled.div`
   display: grid;
   justify-items: center;
   justify-self: center;
+  opacity: 0;
+  transform: translateY(-10%);
+  animation: move .3s linear 1s forwards;
 
   img {
     max-width: 60%;
@@ -43,6 +46,14 @@ const HeroImageStyled = styled.div`
       max-width: 100%;
     }
   }
+
+  @keyframes move {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 `
 
 const HeroTextStyled = styled.div`
@@ -50,6 +61,9 @@ const HeroTextStyled = styled.div`
     justify-items: center;
     position: relative;
     justify-self: center;
+    opacity: 0;
+    transform: translateX(10%);
+    animation: move .3s linear 1.3s forwards;
 
     @media (min-width: 768px) {
       justify-items: left;
@@ -68,7 +82,7 @@ const HeroTextStyled = styled.div`
     }
 
     h1 {
-      color: white;
+      color: var(--white);
       font-family: Georgia, serif;
       font-size: 24px;
 
@@ -78,22 +92,6 @@ const HeroTextStyled = styled.div`
 
       @media (min-width: 1180px) {
         font-size: 48px;
-      }
-    }
-
-    button {
-      background: #AB528D;
-      border: none;
-      color: white;
-      padding: 10px 23px;
-      margin-top: 30px;
-      border-radius: 4px;
-      font-size: 13px;
-      cursor: pointer;
-      font-weight: var(--bold);
-
-      @media (min-width: 768px) {
-        transform: translateX(-30%);
       }
     }
 `
@@ -110,7 +108,7 @@ function HomepageHero() {
           <br />
           on boring things
         </h1>
-        <button>GO EXPLORE</button>
+        <Button hero>GO EXPLORE</Button>
       </HeroTextStyled>
       <HeroBackgroundStyled src={HeroBackground} />
     </SectionStyled>

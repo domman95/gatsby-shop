@@ -15,6 +15,9 @@ const GlobalStyle = createGlobalStyle`
       --regular: 400;
       --bold: 700;
       --mainColor: #1C042E;
+      --pink: #AB528D;
+      --white: #FFFFFF;
+      --lightgrey: #C4C4C4;
   }
 
   body {
@@ -24,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
 `
 
 export default GlobalStyle

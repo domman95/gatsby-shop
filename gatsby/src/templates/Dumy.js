@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import styled from "styled-components"
 import MainContext from "../MainContext"
+import Button from "../components/Button"
 
 const Container = styled.article`
   display: flex;
@@ -50,21 +51,7 @@ const Container = styled.article`
       font-weight: var(--bold);
       font-size: 22px;
     }
-
-    .addToCart {
-      font-weight: var(--bold);
-      color: white;
-      border: none;
-      border-radius: 4px;
-      background: #AB528D;
-      padding: 12px 32px;
-      text-transform: uppercase;
-      font-size: 13px;
-      margin: 20px 0 0;
-      cursor: pointer;
-    }
   }
-
 `
 
 export default function SingleDumyPage({ data: { dumy } }) {
@@ -83,7 +70,7 @@ export default function SingleDumyPage({ data: { dumy } }) {
         <h2 className="title">{name}</h2>
         <p className="description">{description}</p>
         <p className="price">${price / 100}</p>
-        <button className="addToCart" onClick={() => addToCart(dumy)}>Add To Cart</button>
+        <Button className="addToCart" onClick={() => addToCart(dumy)}>Add To Cart</Button>
       </div>
     </Container>
   )

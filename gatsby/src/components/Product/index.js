@@ -16,9 +16,15 @@ const Article = styled.article`
   border: 3px solid #969393;
   background: #331f41;
 
+
   .image {
     padding: 30px 0 20px;
     text-align: center;
+    transition: transform .1s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .info {
@@ -27,12 +33,12 @@ const Article = styled.article`
     .nameOfProduct {
       line-height: 22px;
       padding-bottom: 10px;
-      color: white;
+      color: var(--white);
     }      
 
     .details {
       padding-right: 30px;
-      color: #c4c4c4;
+      color: var(--lightgrey);
     }
   }
 
@@ -44,13 +50,17 @@ const Article = styled.article`
     height: 44px;
     border-radius: 50%;
     border: none;
-    background:#AB528D;
-    color: white;
+    background:var(--pink);
+    color: var(--white);
     font-family: var(--roboto);
     font-weight: var(--bold);
     font-size: 32px;
     z-index: 1;
     cursor: pointer;
+
+    &::hover {
+      transform: scale(1.2);
+    }
   }
 `
 

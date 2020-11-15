@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react"
 
 import styled from "styled-components"
+import { useSpring, animated } from "react-spring"
 import MainContext from "../../MainContext"
 
 const Container = styled.div`
@@ -30,9 +31,9 @@ const ShoppingCart = styled.div`
     border: none;
     font-family: var(--roboto);
     font-weight: var(--bold);
-    color: white;
+    color: var(--white);
     font-size: 14px; // 12px is too small in my opinion
-    background: #AB528D;
+    background: var(--pink);
     padding: 6px 16px;
     cursor: pointer;
     border-radius: 4px;
@@ -45,7 +46,7 @@ const ShoppingCart = styled.div`
     max-height: 70%;
 
     .empty {
-      color: white;
+      color: var(--white);
       padding: 20px 0;
       text-align: center;
       font-size: 16px;
@@ -101,6 +102,11 @@ export default function ShoppingCartModal({ open, setIsModal }) {
     }
   }
 
+  const animationProps = useSpring(
+    {
+      opacity: open ? 1 : 0,
+      transform: open ? "translateX(0)" : "translateX(100%)",
+    })
   const context = React.useContext(MainContext)
   const { shopCart } = context
 
@@ -112,20 +118,22 @@ export default function ShoppingCartModal({ open, setIsModal }) {
     <>
       {open &&
         <Container ref={modalRef} onClick={closeModal}>
-          <ShoppingCart>
-            <ul>
-              {productList.map(({ id, image, name, price }) => (
-                <li key={id}>
-                  <div className="productImage">
-                    <img src={image.asset.fluid.src} alt="" />
-                  </div>
-                  <h3 className="productName">{name}</h3>
-                  <p className="price">${price / 100}</p>
-                </li>
-              ))}
-            </ul>
-            <button className="submit" onClick={() => setIsModal(!open)}>Submit</button>
-          </ShoppingCart>
+          <animated.div style={animationProps}>
+            <ShoppingCart>
+              <ul>
+                {productList.map(({ id, image, name, price }) => (
+                  <li key={id}>
+                    <div className="productImage">
+                      <img src={image.asset.fluid.src} alt="" />
+                    </div>
+                    <h3 className="productName">{name}</h3>
+                    <p className="price">${price / 100}</p>
+                  </li>
+                ))}
+              </ul>
+              <button className="submit" onClick={() => setIsModal(!open)}>Submit</button>
+            </ShoppingCart>
+          </animated.div>
         </Container>}
     </>
   )

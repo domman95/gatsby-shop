@@ -42,4 +42,5 @@ module.exports = {
       }
     }
   ],
+  pathPrefix: "/gatsby-shop/"
 }

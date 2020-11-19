@@ -1,16 +1,14 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@700&display=swap');
-
   * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
   }
 
   :root {
+      --montserrat: 'Montserrat', sans-serif;
       --roboto: 'Roboto', sans-serif;
       --regular: 400;
       --bold: 700;
@@ -18,10 +16,12 @@ const GlobalStyle = createGlobalStyle`
       --pink: #AB528D;
       --white: #FFFFFF;
       --lightgrey: #C4C4C4;
+      --radius: 4px;
   }
 
   body {
       background: var(--mainColor);
+      font-family: var(--montserrat);
   }
 
   a {

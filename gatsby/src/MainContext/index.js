@@ -1,3 +1,4 @@
+import { check } from "prettier"
 import React, { useState, useEffect } from "react"
 
 const MainContext = React.createContext(null)
@@ -6,6 +7,12 @@ const MainProvider = ({ children }) => {
   const [shopCart, setShopCart] = useState([])
 
   const addToCart = (data) => {
+    const id = data.id
+    const checkDuplicate = shopCart.filter(item => item.id === id).length
+    if (checkDuplicate >= 1) {
+      alert("This article is already in your basket!")
+      return
+    }
     setShopCart([
       ...shopCart,
       {

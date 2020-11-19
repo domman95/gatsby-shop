@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 import Carousel from "react-elastic-carousel"
-import Product from "../Product"
+import Product from "components/Product"
 
 const ProductsSectionStyled = styled.section`
   margin: 100px 0;

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import styled from "styled-components"
 
-import MainContext from "../../MainContext"
+import MainContext from "MainContext"
 
 const Article = styled.article`
   position: relative;

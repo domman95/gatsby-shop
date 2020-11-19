@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react"
 
 import { Link } from "gatsby"
 import styled from "styled-components"
-import shoppingCart from "../../assets/elements/shopping_cart.svg"
-import ShoppingCartModal from "../ShoppingCartModal"
-import MainContext from "../../MainContext"
+import shoppingCart from "assets/elements/shopping_cart.svg"
+import ShoppingCartModal from "components/ShoppingCartModal"
+import MainContext from "MainContext"
 
 const HeaderStyled = styled.header`
   position: fixed;

@@ -1,9 +1,9 @@
 import React from "react"
 
-import Header from "../components/Header"
-import GlobalStyle from "../styles/GlobalStyle"
+import Header from "components/Header"
+import GlobalStyle from "styles/GlobalStyle"
 import styled from "styled-components"
-import MainContext from "../MainContext"
+import MainContext from "MainContext"
 
 const MainStyled = styled.main`
   padding-top: 60px;

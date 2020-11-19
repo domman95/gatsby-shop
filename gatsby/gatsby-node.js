@@ -28,3 +28,14 @@ async function turnDummiesIntoPages({ graphql, actions } ) {
 exports.createPages = async (params) => {
 	await turnDummiesIntoPages(params);
 }
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+	actions.setWebpackConfig({
+		resolve: {
+			modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+			alias: {
+				'~': path.resolve(__dirname, 'src'),
+			},
+		},
+	})
+}

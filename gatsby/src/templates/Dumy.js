@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import styled from "styled-components"
-import MainContext from "../MainContext"
-import Button from "../components/Button"
+import MainContext from "MainContext"
+import Button from "components/Button"
 
 const Container = styled.article`
   display: flex;

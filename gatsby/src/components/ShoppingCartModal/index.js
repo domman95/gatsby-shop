@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react"
 
 import styled from "styled-components"
 import { useSpring, animated } from "react-spring"
-import MainContext from "../../MainContext"
+import MainContext from "MainContext"
 
 const Container = styled.div`
   position: fixed;

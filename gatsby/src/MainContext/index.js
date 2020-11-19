@@ -1,4 +1,3 @@
-import { check } from "prettier"
 import React, { useState, useEffect } from "react"
 
 const MainContext = React.createContext(null)

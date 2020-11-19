@@ -1,10 +1,10 @@
 import React from "react"
 
 import styled from "styled-components"
-import HeroBackground from "../../assets/elements/hero_background.svg"
-import HeroImage from "../../assets/elements/monitor.svg"
-import HeroDecor from "../../assets/elements/hero_decor.svg"
-import Button from "../Button"
+import HeroBackground from "assets/elements/hero_background.svg"
+import HeroImage from "assets/elements/monitor.svg"
+import HeroDecor from "assets/elements/hero_decor.svg"
+import Button from "components/Button"
 
 const SectionStyled = styled.section`
   display: grid;

@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import styled from "styled-components"
-
 import MainContext from "MainContext"
 
 const Article = styled.article`
@@ -11,10 +10,10 @@ const Article = styled.article`
   flex-direction: column;
   align-items: center;
   width: 265px;
-  height: 273px;
+  height: 270px;
   border-radius: 2px;
-  border: 3px solid #969393;
-  background: #331f41;
+  border: 3px solid var(--productCardBorder);
+  background: var(--productCardBgc);
 
 
   .image {
@@ -46,15 +45,15 @@ const Article = styled.article`
     position: absolute;
     right: 10px;
     bottom: 10px;
-    width: 44px;
-    height: 44px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     border: none;
     background:var(--pink);
     color: var(--white);
     font-family: var(--roboto);
     font-weight: var(--bold);
-    font-size: 32px;
+    font-size: ${({ theme }) => theme.large.l};
     z-index: 1;
     cursor: pointer;
 

@@ -10,7 +10,7 @@ const ButtonStyled = styled.button`
     padding: 10px 23px;
     margin-top: 30px;
     border-radius: var(--radius);
-    font-size: 13px;
+    font-size: ${({ theme }) => theme.small.m};
     cursor: pointer;
     font-weight: var(--bold);
     opacity: ${({ hero }) => hero ? 0 : 1};

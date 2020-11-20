@@ -8,10 +8,11 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: rgba(28, 4, 46, 0.55);
   backdrop-filter: blur(6px);
+  z-index: 2;
 `
 
 const ShoppingCart = styled.div`
@@ -19,10 +20,10 @@ const ShoppingCart = styled.div`
   position: absolute;
   top: 60px;
   right: 40px;
-  width: 281px;
-  height: 276px;
-  border: 2px solid #F5F5F5;
-  background: #220538;
+  width: 280px;
+  height: 275px;
+  border: 2px solid var(--shopCartBorder);
+  background: var(--shopCartBgc);
 
   .submit {
     position: absolute;
@@ -32,9 +33,9 @@ const ShoppingCart = styled.div`
     font-family: var(--roboto);
     font-weight: var(--bold);
     color: var(--white);
-    font-size: 14px; // 12px is too small in my opinion
+    font-size: ${({ theme }) => theme.small.m};
     background: var(--pink);
-    padding: 6px 16px;
+    padding: 5px 15px;
     cursor: pointer;
     border-radius: 4px;
     text-transform: uppercase;
@@ -45,18 +46,11 @@ const ShoppingCart = styled.div`
     overflow-y: auto;
     max-height: 70%;
 
-    .empty {
-      color: var(--white);
-      padding: 20px 0;
-      text-align: center;
-      font-size: 16px;
-    }
-
     li {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 28px;
+    height: 30px;
     margin: 10px 0;
 
     .productImage {
@@ -72,7 +66,7 @@ const ShoppingCart = styled.div`
     .productName, .price {
       white-space: nowrap;
       color: #eeeeee;
-      font-size: 12px;
+      font-size: ${({ theme }) => theme.small.s};
     }
 
     .productName {

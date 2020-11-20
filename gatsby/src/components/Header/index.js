@@ -14,19 +14,19 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 17px;
-  z-index: 1;
+  padding: 15px;
+  z-index: 10;
 
 
   @media (min-width: 430px) {
-    padding: 17px 97px 17px 57px;
+    padding: 15px 95px 15px 55px;
   }
 
   a {
     color: var(--white);
     text-decoration: none;
     font-weight: var(--bold);
-    font-size: 22px;
+    font-size: ${({ theme }) => theme.medium.s};
   }
 `
 
@@ -34,7 +34,7 @@ const ShoppingCartButton = styled.button`
   position: relative;
   background: url(${shoppingCart}) no-repeat center/cover;
   width: 30px;
-  height: 26px;
+  height: 25px;
   border: none;
   cursor: pointer;
 
@@ -46,10 +46,10 @@ const ShoppingCartButton = styled.button`
     justify-content: center;
     align-items: center;
     color: var(--white);
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: #301346;
+    background: var(--shopCartCount);
   }
 `
 

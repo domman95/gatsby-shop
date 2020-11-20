@@ -16,8 +16,16 @@ const GlobalStyle = createGlobalStyle`
       --pink: #AB528D;
       --white: #FFFFFF;
       --lightgrey: #C4C4C4;
+      --productCardBgc: #331f41;
+      --productCardBorder: #969393;
+      --shopCartCount: #301346;
+      --shopCartBgc: #220538;
+      --shopCartBorder: #F5F5F5;
       --radius: 4px;
-      --tablet-up: @media (min-width: 768px);
+      --siteWidth: 1440px;
+      --h1fontS: 24px;
+      --h1fontM: 30px;
+      --h1fontL: 48px;
   }
 
   body {

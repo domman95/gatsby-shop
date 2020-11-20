@@ -24,7 +24,7 @@ const HeroBackgroundStyled = styled.img`
   top: 0;
   right: 0;
   max-width: 50%;
-  z-index: -1;
+  z-index: 1;
 `
 
 const HeroImageStyled = styled.div`
@@ -63,6 +63,7 @@ const HeroTextStyled = styled.div`
     justify-self: center;
     opacity: 0;
     transform: translateX(10%);
+    z-index: 2;
     animation: move .3s linear 1.3s forwards;
 
     @media (min-width: 768px) {
@@ -84,14 +85,14 @@ const HeroTextStyled = styled.div`
     h1 {
       color: var(--white);
       font-family: Georgia, serif;
-      font-size: 24px;
+      font-size: ${({ theme }) => theme.medium.m};
 
       @media (min-width: 768px) {
-        font-size: 30px;
+        font-size: ${({ theme }) => theme.medium.xl};
       }
 
       @media (min-width: 1180px) {
-        font-size: 48px;
+        font-size: ${({ theme }) => theme.large.xl};
       }
     }
 `

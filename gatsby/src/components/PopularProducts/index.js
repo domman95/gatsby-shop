@@ -13,7 +13,7 @@ const ProductsSectionStyled = styled.section`
     font-weight: var(--bold);
     line-height: 34px;
     margin: 20px 0;
-    font-size: 18px;
+    font-size: ${({ theme }) => theme.small.xl};
     opacity: 0;
     transform: translateY(40%);
     animation: move .3s linear 2s forwards;
@@ -23,7 +23,7 @@ const ProductsSectionStyled = styled.section`
     color: var(--lightgrey);
     line-height: 20px;
     margin-bottom: 64px;
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.small.l};
     opacity: 0;
     transform: translateY(40%);
     animation: move .3s linear 2.3s forwards;
@@ -43,7 +43,7 @@ const ProductsSectionStyled = styled.section`
     margin: 100px 30px;
 
     .title {
-      font-size: 28px;
+      font-size: ${({ theme }) => theme.medium.l};
     }
 
     .title, .paragraph {
